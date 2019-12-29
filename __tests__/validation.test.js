@@ -7,6 +7,12 @@ const StaticValidNumbers = [
   '094079101', // EYDAP
 ];
 
+const StaticInvalidNumbers = [
+  '123456789',
+  '097364585',
+  '150663780'
+];
+
 describe('Validation', () => {
   it('should validate valid AFM numbers', () => {
     for(const afm of StaticValidNumbers) {
@@ -15,8 +21,10 @@ describe('Validation', () => {
     }
   });
 
-  it('should validate an invalid AFM', () => {
-    const invalid = validateAFM('123456789');
-    expect(invalid).toBe(false);
+  it('should validate invalid AFM numbers', () => {
+    for(const afm of StaticInvalidNumbers) {
+      const valid = validateAFM(afm);
+      expect(valid).toBe(false);
+    }
   });
 });
