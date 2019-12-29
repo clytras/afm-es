@@ -1,0 +1,32 @@
+{
+  "name": "@lytrax/afm",
+  "version": "1.0.0",
+  "description": "Greek AFM (TIN) validator and generator",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.esm.js",
+  "browser": "dist/lytrax-afm.js",
+  "scripts": {
+    "test": "jest --verbose",
+    "build": "rollup --config && rollup --config rollup.config.umd.js",
+    "watch": "rollup --config --watch"
+  },
+  "keywords": [
+    "afm",
+    "tin",
+    "tax",
+    "number",
+    "greek"
+  ],
+  "author": "Christos Lytras <christos.lytreas@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.7.7",
+    "@babel/preset-env": "^7.7.7",
+    "@rollup/plugin-node-resolve": "^6.0.0",
+    "babel-jest": "^24.9.0",
+    "jest": "^24.9.0",
+    "rollup": "^1.27.14",
+    "rollup-plugin-babel": "^4.3.3",
+    "rollup-plugin-babel-minify": "^9.1.1"
+  }
+}
