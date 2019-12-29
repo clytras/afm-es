@@ -50,13 +50,13 @@ Generate an invalid number:
 
 ## API
 
-validateAFM `(afm, [{ extendedResult = false }])`
+**validateAFM** `(afm, [{ extendedResult = false }])`
 * `afm: string` - A number to be checked
 * `[params: object]` - Optional object for named parameters
 * `[params.extendedResult: boolean = false]` - Return a `boolean` or `ValidateAFMExtendedResult`
 * Returns: `boolean` or `ValidateAFMExtendedResult`
 
-generateAFM `([{`<br>
+**generateAFM** `([{`<br>
 &nbsp;&nbsp;` forceFirstDigit,`<br>
 &nbsp;&nbsp;` pre99 = false,`<br>
 &nbsp;&nbsp;` individual = false,`<br>
@@ -73,10 +73,10 @@ generateAFM `([{`<br>
 * `[params.valid: boolean = true]` - Generate valid or invalid AFM
 * Returns: `string` - A valid or invalid 9 digit AFM number
 
-generateValidAFM - Same as `generateAFM` with `params.valid` force and override to `true`
+**generateValidAFM** - Same as `generateAFM` with `params.valid` force and override to `true`
 * Returns: `string` - A valid 9 digit AFM number
 
-generateInvalidAFM - Same as `generateAFM` with `params.valid` force and override to `false`
+**generateInvalidAFM** - Same as `generateAFM` with `params.valid` force and override to `false`
 * Returns: `string` - An invalid 9 digit AFM number
 
 Object result `ValidateAFMExtendedResult`<br/>
