@@ -1,4 +1,4 @@
-require('./jest-extend');
+require('../jest/jest-extend');
 
 const {
   validateAFM,
