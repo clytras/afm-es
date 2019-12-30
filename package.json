@@ -1,5 +1,5 @@
 {
-  "name": "@lytrax/afm",
+  "name": "@lytrax/afm-es",
   "version": "1.0.0",
   "description": "Greek AFM (TIN) validator and generator",
   "main": "dist/index.cjs.js",
@@ -19,12 +19,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/clytras/afm.git"
+    "url": "git+https://github.com/clytras/afm-es.git"
   },
   "bugs": {
-    "url": "https://github.com/clytras/afm/issues"
+    "url": "https://github.com/clytras/afm-es/issues"
   },
-  "homepage": "https://github.com/clytras/afm#readme",
+  "homepage": "https://github.com/clytras/afm-es#readme",
   "keywords": [
     "afm",
     "tin",

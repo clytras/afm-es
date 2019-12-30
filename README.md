@@ -1,6 +1,6 @@
 # Greek TIN/AFM validator and generator
 
-[![Linux Build Status](https://img.shields.io/travis/clytras/afm.svg?style=flat)](https://travis-ci.org/clytras/afm.svg?branch=master)
+[![Linux Build Status](https://img.shields.io/travis/clytras/afm-es.svg?style=flat)](https://travis-ci.org/clytras/afm-es.svg?branch=master)
 [![tested with jest](https://img.shields.io/badge/tested_with-jest-99424f.svg)](https://github.com/facebook/jest)
 
 
