@@ -7,7 +7,7 @@ import { getRandomInt } from './utils';
  */
 
 /**
- * Generates an AFM number based on object arguments
+ * Checks if the passed AFM is a valid AFM number
  * @param {string} afm - A string to be check if it's a valid AFM.
  * @param {Object} [arguments={}] - Function argumnets object. Empty object for all defaults.
  * @param {boolean} [arguments.extendedResult=false] - Return extended object result if true, single boolean otherwise.
@@ -49,21 +49,22 @@ export function validateAFM(afm, {
   const d9 = parseInt(afm[8]);
   const valid = calc % 10 === d9;
 
-  return extendedResult ? {
-    valid,
-    error: 'invalid'
-  } : valid;
+  if(extendedResult) {
+    return valid ? { valid } : { valid, error: 'invalid' }
+  }
+
+  return valid;
 }
 
 /**
- * Generates an AFM number based on object arguments
- * @param {Object} [arguments={}] - Function argumnets object. Empty object for all defaults.
- * @param {null|number} [arguments.forceFirstDigit] - If specified, overrides all pre99, legalEntity and individual.
- * @param {boolean} [arguments.pre99=false] - Για ΑΦΜ πριν από 1/1/1999 (ξεκινάει με 0), (if true, overrides both legalEntity and individual).
- * @param {boolean} [arguments.individual=false] - Φυσικά πρόσωπα, (ξεκινάει με 1-4)
- * @param {boolean} [arguments.legalEntity=false] - Νομικές οντότητες (ξεκινάει με 7-9)
- * @param {null|number} [arguments.repeatTolerance] - Number for max repeat tolerance (0 for no repeats, unspecified for no check)
- * @param {boolean} [arguments.valid=true] - Generate valid or invalid AFM
+ * Generates an AFM number based on object parameters
+ * @param {Object} [params={}] - Function parameters object. Empty object for all defaults.
+ * @param {null|number} [params.forceFirstDigit] - If specified, overrides all pre99, legalEntity and individual.
+ * @param {boolean} [params.pre99=false] - Για ΑΦΜ πριν από 1/1/1999 (ξεκινάει με 0), (if true, overrides both legalEntity and individual).
+ * @param {boolean} [params.individual=false] - Φυσικά πρόσωπα, (ξεκινάει με 1-4)
+ * @param {boolean} [params.legalEntity=false] - Νομικές οντότητες (ξεκινάει με 7-9)
+ * @param {null|number} [params.repeatTolerance] - Number for max repeat tolerance (0 for no repeats, unspecified for no check)
+ * @param {boolean} [params.valid=true] - Generate valid or invalid AFM
  * @returns {string} - A valid or invalid 9 digit AFM number
  */
 export function generateAFM({
@@ -108,13 +109,13 @@ export function generateAFM({
 }
 
 /**
- * Generates a valid AFM number based on object arguments
- * @param {Object} [arguments={}] - Function argumnets object. Empty object for all defaults.
- * @param {null|number} [arguments.forceFirstDigit] - If specified, overrides all pre99, legalEntity and individual.
- * @param {boolean} [arguments.pre99=false] - Για ΑΦΜ πριν από 1/1/1999 (ξεκινάει με 0), (if true, overrides both legalEntity and individual).
- * @param {boolean} [arguments.individual=false] - Φυσικά πρόσωπα, (ξεκινάει με 1-4)
- * @param {boolean} [arguments.legalEntity=false] - Νομικές οντότητες (ξεκινάει με 7-9)
- * @param {null|number} [arguments.repeatTolerance] - Number for max repeat tolerance (0 for no repeats, unspecified for no check)
+ * Generates a valid AFM number based on object parameters
+ * @param {Object} [parameters={}] - Function parameters object. Empty object for all defaults.
+ * @param {null|number} [params.forceFirstDigit] - If specified, overrides all pre99, legalEntity and individual.
+ * @param {boolean} [params.pre99=false] - Για ΑΦΜ πριν από 1/1/1999 (ξεκινάει με 0), (if true, overrides both legalEntity and individual).
+ * @param {boolean} [params.individual=false] - Φυσικά πρόσωπα, (ξεκινάει με 1-4)
+ * @param {boolean} [params.legalEntity=false] - Νομικές οντότητες (ξεκινάει με 7-9)
+ * @param {null|number} [params.repeatTolerance] - Number for max repeat tolerance (0 for no repeats, unspecified for no check)
  * @returns {string} - A valid 9 digit AFM number
  */
 export function generateValidAFM(args = {}) {
@@ -122,13 +123,13 @@ export function generateValidAFM(args = {}) {
 }
 
 /**
- * Generates an invalid AFM number based on object arguments
- * @param {Object} [arguments={}] - Function argumnets object. Empty object for all defaults.
- * @param {null|number} [arguments.forceFirstDigit] - If specified, overrides all pre99, legalEntity and individual.
- * @param {boolean} [arguments.pre99=false] - Για ΑΦΜ πριν από 1/1/1999 (ξεκινάει με 0), (if true, overrides both legalEntity and individual).
- * @param {boolean} [arguments.individual=false] - Φυσικά πρόσωπα, (ξεκινάει με 1-4)
- * @param {boolean} [arguments.legalEntity=false] - Νομικές οντότητες (ξεκινάει με 7-9)
- * @param {null|number} [arguments.repeatTolerance] - Number for max repeat tolerance (0 for no repeats, unspecified for no check)
+ * Generates an invalid AFM number based on object parameters
+ * @param {Object} [parameters={}] - Function parameters object. Empty object for all defaults.
+ * @param {null|number} [params.forceFirstDigit] - If specified, overrides all pre99, legalEntity and individual.
+ * @param {boolean} [params.pre99=false] - Για ΑΦΜ πριν από 1/1/1999 (ξεκινάει με 0), (if true, overrides both legalEntity and individual).
+ * @param {boolean} [params.individual=false] - Φυσικά πρόσωπα, (ξεκινάει με 1-4)
+ * @param {boolean} [params.legalEntity=false] - Νομικές οντότητες (ξεκινάει με 7-9)
+ * @param {null|number} [params.repeatTolerance] - Number for max repeat tolerance (0 for no repeats, unspecified for no check)
  * @returns {string} - An invalid 9 digit AFM number
  */
 export function generateInvalidAFM(args = {}) {

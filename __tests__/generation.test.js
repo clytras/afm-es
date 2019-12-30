@@ -1,5 +1,3 @@
-require('../jest/jest-extend');
-
 const {
   validateAFM,
   generateAFM,
@@ -37,7 +35,7 @@ describe('Random integer', () => {
   it('should generate integers between 0 and 9', () => {
     for(let i = 0; i < iterations; i++) {
       const value = getRandomInt(0, 9);
-      expect(value).toBeWithinRange(0, 9);
+      expect(value).toBeWithin(0, 9);
     }
   });
 
@@ -48,7 +46,7 @@ describe('Random integer', () => {
         const notEqual = digits[digit];
         const value = getRandomInt(0, 9, notEqual);
         expect(value).not.toBe(notEqual);
-        expect(value).toBeWithinRange(0, 9);
+        expect(value).toBeWithin(0, 9);
       }
     }
   });

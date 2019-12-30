@@ -17,6 +17,9 @@
     "test:validation": "jest validation.test.js --verbose",
     "watch": "rollup --config --watch"
   },
+  "jest": {
+    "setupFilesAfterEnv": ["jest-extended"]
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/clytras/afm-es.git"
@@ -53,6 +56,7 @@
     "@rollup/plugin-node-resolve": "^6.0.0",
     "babel-jest": "^24.9.0",
     "jest": "^24.9.0",
+    "jest-extended": "^0.11.2",
     "rollup": "^1.27.14",
     "rollup-plugin-babel": "^4.3.3",
     "rollup-plugin-babel-minify": "^9.1.1"
