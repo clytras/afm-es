@@ -24,6 +24,29 @@ yarn add @lytrax/afm
 
 ## Usage
 
+Import or require:
+
+```js
+// ESM
+import {
+  validateAFM,
+  generateAFM,
+  generateValidAFM,
+  generateInvalidAFM
+} from '@lytrax/afm';
+
+// CJS
+const {
+  validateAFM,
+  generateAFM,
+  generateValidAFM,
+  generateInvalidAFM
+} = require('@lytrax/afm');
+
+// UMD (Browsers)
+<script></script>
+```
+
 Validate a number:
 
 ```js
@@ -56,6 +79,12 @@ Generate an invalid number:
 * `[params.extendedResult: boolean = false]` - Return a `boolean` or `ValidateAFMExtendedResult`
 * Returns: `boolean` or `ValidateAFMExtendedResult`
 
+Example:
+```js
+> validateAFM('ab1234', { extendedResult: true })
+< {valid: false, error: "length"}
+```
+
 **generateAFM** `([{`<br>
 &nbsp;&nbsp;` forceFirstDigit,`<br>
 &nbsp;&nbsp;` pre99 = false,`<br>
@@ -73,13 +102,31 @@ Generate an invalid number:
 * `[params.valid: boolean = true]` - Generate valid or invalid AFM
 * Returns: `string` - A valid or invalid 9 digit AFM number
 
+Example:
+```js
+> generateAFM({ forceFirstDigit: 3, repeatTolerance: 1, valid: true })
+< "335151580"
+```
+
 **generateValidAFM** - Same as `generateAFM` with `params.valid` force and override to `true`
 * Returns: `string` - A valid 9 digit AFM number
+
+Example:
+```js
+> generateValidAFM({ pre99: true })
+< "070825250"
+```
 
 **generateInvalidAFM** - Same as `generateAFM` with `params.valid` force and override to `false`
 * Returns: `string` - An invalid 9 digit AFM number
 
-Object result `ValidateAFMExtendedResult`<br/>
+Example:
+```js
+> generateInvalidAFM({ legalEntity: true })
+< "877577341"
+```
+
+Object result typedef `ValidateAFMExtendedResult`<br/>
 * Property `valid: boolean` - Whether the AFM number is valid or not.
 * Property `error: 'length' or 'nan' or 'zero' or 'invalid'`
 

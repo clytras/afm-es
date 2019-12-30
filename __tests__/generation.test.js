@@ -31,7 +31,7 @@ const calls = {
     }],
     expectResult: false
   }
-};
+}
 
 describe('Random integer', () => {
   it('should generate integers between 0 and 9', () => {
