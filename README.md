@@ -1,4 +1,4 @@
-# Greek TIN/AFM validator and generator
+# Greek TIN/AFM Validator and Generator
 
 [![Linux Build Status](https://img.shields.io/travis/clytras/afm-es.svg?style=flat)](https://travis-ci.org/clytras/afm-es.svg?branch=master)
 [![tested with jest](https://img.shields.io/badge/tested_with-jest-99424f.svg)](https://github.com/facebook/jest)
@@ -77,7 +77,7 @@ Generate an invalid number:
 * `afm: string` - A number to be checked
 * `[params: object]` - Optional object for named parameters
 * `[params.extendedResult: boolean = false]` - Return a `boolean` or `ValidateAFMExtendedResult`
-* Returns: `boolean` or `ValidateAFMExtendedResult`
+* **Returns**: `boolean` or `ValidateAFMExtendedResult`
 
 Example:
 ```js
@@ -100,7 +100,7 @@ Example:
 * `[params.legalEntity: boolean = false]` - Νομικές οντότητες (ξεκινάει με 7-9)
 * `[params.repeatTolerance: null|number]` - Number for max repeat tolerance (0 for no repeats, unspecified for no check)
 * `[params.valid: boolean = true]` - Generate valid or invalid AFM
-* Returns: `string` - A valid or invalid 9 digit AFM number
+* **Returns**: `string` - A valid or invalid 9 digit AFM number
 
 Example:
 ```js
@@ -109,7 +109,7 @@ Example:
 ```
 
 **generateValidAFM** - Same as `generateAFM` with `params.valid` force and override to `true`
-* Returns: `string` - A valid 9 digit AFM number
+* **Returns**: `string` - A valid 9 digit AFM number
 
 Example:
 ```js
@@ -118,7 +118,7 @@ Example:
 ```
 
 **generateInvalidAFM** - Same as `generateAFM` with `params.valid` force and override to `false`
-* Returns: `string` - An invalid 9 digit AFM number
+* **Returns**: `string` - An invalid 9 digit AFM number
 
 Example:
 ```js
@@ -130,13 +130,12 @@ Object result typedef `ValidateAFMExtendedResult`<br/>
 * Property `valid: boolean` - Whether the AFM number is valid or not.
 * Property `error: 'length' or 'nan' or 'zero' or 'invalid'`
 
-
 ## Test
 
 Clone this repository, intall modules and run test:
 
 ```
-git clone https://github.com/clytras/afm.git && cd afm
+git clone https://github.com/clytras/afm-es.git && cd afm-es
 npm install
 npm run test
 ```

@@ -1,7 +1,13 @@
 const { generateInvalidAFM, validateAFM } = require('../dist/index.cjs');
 
-console.log('(default)', generateInvalidAFM());
-console.log('pre99', generateInvalidAFM({ pre99: true }));
-console.log('legalEntity', generateInvalidAFM({ legalEntity: true }));
-console.log('individual', generateInvalidAFM({ individual: true }));
-console.log('repeatTolerance:0', generateInvalidAFM({ repeatTolerance: 0 }));
+Object.entries({
+  '(default)': {},
+  'pre99': { pre99: true },
+  'legalEntity': { legalEntity: true },
+  'individual': { individual: true },
+  'repeatTolerance:0': { repeatTolerance: 0 }
+})
+.forEach(([type, params]) => {
+  const afm = generateInvalidAFM(params);
+  console.log(type, afm, validateAFM(afm) ? '(valid)' : '(invalid)');
+});
