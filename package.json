@@ -1,5 +1,5 @@
 {
-  "name": "@lytrax/afm-es",
+  "name": "@lytrax/afm",
   "version": "1.0.0",
   "description": "Greek AFM (TIN) validator and generator",
   "main": "dist/index.cjs.js",
@@ -8,8 +8,8 @@
   "jsdelivr": "dist/lytrax-afm.js",
   "scripts": {
     "build": "rollup --config && rollup --config rollup.config.umd.js",
-    "deploy": "npm run build && npm run test && npm publish --access-public",
-    "deploy-dry": "npm run build && npm run test && npm publish --access-public --dry-run",
+    "deploy": "npm run test && npm run build && npm publish --access-public",
+    "deploy-dry": "npm run test && npm run build && npm publish --access-public --dry-run",
     "gen-valid": "node ./demo/gen-valid.js",
     "gen-invalid": "node ./demo/gen-invalid.js",
     "test": "jest --verbose",
