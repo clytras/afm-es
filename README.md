@@ -6,9 +6,9 @@
 
 Validate and generate Greek TIN (*Tax Identification Number*) / AFM (*Αριθμός Φορολογικού Μητρώου*). Generation function can create valid or invalid numbers including parameters for old format, individuals, legal entities and repet tolerance digits control.
 
-## Online demo
+## Online demo and presentation
 
-https://lytrax.io
+https://lytrax.io/blog/projects/greek-tin-validator-generator
 
 ## Installation
 
@@ -140,6 +140,10 @@ npm install
 npm run test
 ```
 
+## Changelog
+
+See [CHANGELOG](https://github.com/clytras/afm-es/blob/master/CHANGELOG.md)
+
 ## License
 
-MIT License - see the [LICENSE](LICENSE) file for details
+MIT License - see the [LICENSE](https://github.com/clytras/afm-es/blob/master/LICENSE) file for details
