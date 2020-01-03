@@ -1,0 +1,55 @@
+<!-- 
+
+  Distribution files must be build before opening this on browser:
+
+  npm run build
+
+-->
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>Lytrax AFM UMD Demo</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <script src='../dist/lytrax-afm.js'></script>
+  <style type="text/css">
+    pre#valid { color: green; }
+    pre#invalid { color: red; }
+  </style>
+</head>
+<body>
+  <h2>Demo: Generate valid numbers</h2>
+  <pre id="valid"></pre>
+
+  <h2>Demo: Generate invalid numbers</h2>
+  <pre id="invalid"></pre>
+  
+  <script>
+
+    Object.entries({
+      valid: true,
+      invalid: false
+    })
+    .forEach(([tag, valid]) => {
+      const resultEl = document.getElementById(tag);
+
+      Object.entries({
+        '(default)': {},
+        'pre99': { pre99: true },
+        'legalEntity': { legalEntity: true },
+        'individual': { individual: true },
+        'repeatTolerance:0': { repeatTolerance: 0 }
+      })
+      .forEach(([type, params]) => {
+        params.valid = valid;
+        const afm = LytraxAFM.generateAFM(params);
+        const isValid = LytraxAFM.validateAFM(afm);
+        const content = document.createTextNode(`${type} ${afm} ${isValid ? '(valid)' : '(invalid)'}\n`);
+        resultEl.appendChild(content);
+      });
+    });
+
+  </script>
+</body>
+</html>

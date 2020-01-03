@@ -23,7 +23,7 @@ yarn add @lytrax/afm
 
 ## Usage
 
-Import or require:
+Import or require (*ESM*, *CJS*):
 
 ```js
 // ESM
@@ -42,8 +42,13 @@ const {
   generateInvalidAFM
 } = require('@lytrax/afm');
 
+
+```
+For browsers (*UMD*), download latest release from [releases](https://github.com/clytras/afm-es/releases), or browse [JSDeliver](https://www.jsdelivr.com/package/npm/@lytrax/afm) CDN to pick the latest version and then include the script file:
+
+```js
 // UMD (Browsers)
-<script></script>
+<script src='https://cdn.jsdelivr.net/npm/@lytrax/afm@latest/dist/lytrax-afm.min.js'></script>
 ```
 
 Validate a number:
