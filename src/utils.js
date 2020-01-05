@@ -5,7 +5,7 @@ export function getRandomInt(min, max, notEqual = null) {
   max = Math.floor(max);
 
   do {
-    result = Math.floor(Math.random() * (max - min)) + min;
+    result = Math.floor(Math.random() * (max - min + 1)) + min;
   } while(notEqual !== null && result === notEqual);
   
   return  result;

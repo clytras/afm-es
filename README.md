@@ -50,7 +50,7 @@ For browsers (*UMD*), download latest release from [releases](https://github.com
 
 ```js
 // UMD (Browsers)
-<script src='https://cdn.jsdelivr.net/npm/@lytrax/afm@latest/dist/lytrax-afm.min.js'></script>
+<script src="https://cdn.jsdelivr.net/npm/@lytrax/afm@latest/dist/lytrax-afm.min.js"></script>
 ```
 
 Validate a number:
