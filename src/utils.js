@@ -1,3 +1,4 @@
+// https://stackoverflow.com/a/1527820/1889685
 export function getRandomInt(min, max, notEqual = null) {
   let result;
 

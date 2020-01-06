@@ -11,6 +11,7 @@
     "deploy": "npm run test && npm run build && npm publish --access=public",
     "deploy-dry": "npm run test && npm run build && npm publish --access=public --dry-run",
     "test-deploy-dry": "npm publish --access=public --dry-run",
+    "demo": "node ./demo/index.js",
     "gen-valid": "node ./demo/gen-valid.js",
     "gen-invalid": "node ./demo/gen-invalid.js",
     "test": "jest --verbose",

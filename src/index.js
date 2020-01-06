@@ -102,7 +102,7 @@ export function generateAFM({
   }
 
   const validator = sum % 11;
-  const d9Valid = validator >= 10 ? 0 : validator;
+  const d9Valid = validator % 10;
   const d9 = valid ? d9Valid : getRandomInt(0, 9, d9Valid);
 
   return `${body}${d9}`;
