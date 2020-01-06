@@ -146,6 +146,12 @@ npm install
 npm run test
 ```
 
+Run demo:
+
+```
+npm run demo
+```
+
 ## Changelog
 
 See [CHANGELOG](https://github.com/clytras/afm-es/blob/master/CHANGELOG.md)
