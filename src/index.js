@@ -14,46 +14,49 @@ import { getRandomInt } from './utils';
  * @returns {boolean|ValidateAFMExtendedResult} - A boolean result or ValidateAFMExtendedResult indicating the validation of the number.
  */
 export function validateAFM(afm, {
-  extendedResult = false
+    extendedResult = false
 } = {}) {
-  if(afm.length != 9) {
-    // "Τα ψηφία του ΑΦΜ πρέπει να είναι 9 αριθμοί"
-    return extendedResult ? {
-      valid: false,
-      error: 'length'
-    } : false;
-  } 
+    if (afm.length != 9) {
+        // "Τα ψηφία του ΑΦΜ πρέπει να είναι 9 αριθμοί"
+        return extendedResult ? {
+            valid: false,
+            error: 'length',
+            errorMessage: 'Τα ψηφία του ΑΦΜ πρέπει να είναι 9 αριθμοί'
+        } : false;
+    }
 
-  if(!/^\d+$/.test(afm)) {
-    // "Αυτό που εισάγετε δεν είναι αριθμός"
-    return extendedResult ? {
-      valid: false,
-      error: 'nan' // not a number
-    } : false;
-  }
+    if (!/^\d+$/.test(afm)) {
+        // "Αυτό που εισάγετε δεν είναι αριθμός"
+        return extendedResult ? {
+            valid: false,
+            error: 'nan', // not a number,
+            errorMessage: 'Αυτό που εισάγετε δεν είναι αριθμός'
+        } : false;
+    }
 
-  if(afm === '0'.repeat(9)) {
-    // "Αυτό που εισάγετε είναι μηδενικός αριθμός (000000000)"
-    return extendedResult ? {
-      valid: false,
-      error: 'zero'
-    } : false;
-  }
+    if (afm === '0'.repeat(9)) {
+        // "Αυτό που εισάγετε είναι μηδενικός αριθμός (000000000)"
+        return extendedResult ? {
+            valid: false,
+            error: 'zero',
+            errorMessage: 'Αυτό που εισάγετε είναι μηδενικός αριθμός (000000000)'
+        } : false;
+    }
 
-  const sum = afm
-    .substring(0, 8)
-    .split('')
-    .reduce((s, v, i) => s + (parseInt(v) << (8 - i)), 0);
-  
-  const calc = sum % 11;
-  const d9 = parseInt(afm[8]);
-  const valid = calc % 10 === d9;
+    const sum = afm
+        .substring(0, 8)
+        .split('')
+        .reduce((s, v, i) => s + (parseInt(v) << (8 - i)), 0);
 
-  if(extendedResult) {
-    return valid ? { valid } : { valid, error: 'invalid' }
-  }
+    const calc = sum % 11;
+    const d9 = parseInt(afm[8]);
+    const valid = calc % 10 === d9;
 
-  return valid;
+    if (extendedResult) {
+        return valid ? { valid } : { valid, error: 'invalid', errorMessage: 'Το ΑΦΜ που είσαγατε δεν είναι έγκυρο ΑΦΜ' }
+    }
+
+    return valid;
 }
 
 /**
